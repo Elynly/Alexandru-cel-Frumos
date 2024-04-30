@@ -1,0 +1,187 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: teal;
+    width: 80vw;
+    color: thistle;
+    margin: 0 auto; 
+    font-family: 'Ubuntu', sans-serif;
+}
+.menu-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #330033;
+    border: 2px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.menu-icon::before{
+    content: "About Me";
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+.menu-icon:hover{
+    background-color: yellowgreen;
+    color: black;   
+}
+.menu-icon:hover:before{
+    opacity: 1;
+    color: thistle;
+}
+.menu-text {
+    position: absolute;
+    width: 50vw;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    line-height: 1.5em;
+    padding: 1.5em;
+    transform: translateX(-1000px);
+    opacity: 0; 
+    transition: transform 500ms linear, opacity 500ms linear;
+
+}
+.show-menu {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.menu-text a{
+    text-decoration: none;
+    color: blue;
+}
+
+.menu-text a:hover{
+    color: yellowgreen;
+    text-decoration: underline;
+}
+.container{
+    width: 100%;
+    padding: 2rem;  
+}
+.month-year{
+    text-align: center;
+    font-size: medium;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: center;
+}
+#month-reduce,
+#month-increase,
+#year-reduce,
+#year-increase{
+  cursor: pointer;
+}
+.month-year h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.month-year div:nth-child(1), .month-year div:nth-child(2){
+    border: 1px solid grey;
+    margin: 0 1vw 2vh 1vw;
+    border-radius: 50px;
+    width: 150px;
+
+}
+.month-year div:nth-child(1) span{
+    width: 50px;
+}
+.month-year div:hover{
+    background-color: greenyellow;
+    color: #000000;
+}
+.month-year span{
+    padding: 0.5rem;
+    font-weight: lighter;
+    font-size: 0.6em;
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 3vh;
+}
+.date-and-days{
+    display: flex;
+    justify-content: center;
+}
+th, td{
+    border: 1px solid grey;
+}
+th{
+    background-color: green;
+    height: 10vh;
+}
+td{
+    height: 8vh;
+    text-align: center;
+}
+.reset{
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    align-items: center;
+}
+.reset button{
+    color: honeydew;
+    width: 10vw;
+    min-width: 150px;
+    height: 5vh;
+    min-height: 33px;
+    background-color: teal;
+    border: 1px solid grey;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    outline: none;
+    
+}
+.reset button:hover{
+    background-color: greenyellow;
+    color: #000000;
+}
+.footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+.date-today{
+    text-align: center;
+    margin-top: 10px;
+    font-family: monospace;
+    color: yellowgreen;
+}
+.date-today:hover{
+    color: violet;
+
+}
+@media screen and (max-width: 600px){
+    body{
+        width: 95vw;
+    }
+    .container{
+        padding: 2rem 0px;
+    }
+    .month-year{
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-text{
+        width: 80%;
+        margin-left: 10px;
+    }
+    .menu-icon{
+        margin-left: 10px;
+    }
+}
